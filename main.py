@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import config
+import os
 from telegram.ext import Updater, CommandHandler, Job
 import requests
 
@@ -53,7 +53,7 @@ def stop(bot, update, chat_data):
     update.message.reply_text('Updates stoped!')
 
 def main():
-    updater = Updater(config.token)
+    updater = Updater(os.environ['TELEGRAM_TOKEN'])
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
